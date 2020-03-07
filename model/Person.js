@@ -15,7 +15,8 @@ const personSchema =  new Schema({
             type:String
        },
        photo_url:{
-            type:String
+            type:String,
+            default:"None"
        }
         
        

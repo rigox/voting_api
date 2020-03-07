@@ -21,11 +21,11 @@ exports.getPeople = asyncHandler(async(req,res,next)=>{
 
 exports.createPerson   = asyncHandler( async (req,res,next)=>{
      
-    const  topic =  await Topic.create(req.body)
+    const  temp =  await Person.create(req.body)
 
     res.status(200).json({
          success:true,
-         data: topic
+         data: temp
     })
 
 });
