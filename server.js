@@ -25,7 +25,9 @@ app.use(express.json(), express.urlencoded())
 //load  routes  
 app.use('/api/v1/persons', person)
 
-
+function water(){
+      console.log("water")
+}
 
 const PORT  = process.env.PORT || 5001
 
