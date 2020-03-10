@@ -19,6 +19,9 @@ exports.getPeople = asyncHandler(async(req,res,next)=>{
 //@route  POST /api/v1/Topic
 //@access  Public
 
+
+
+
 exports.createPerson   = asyncHandler( async (req,res,next)=>{
      
     const  temp =  await Person.create(req.body)
@@ -29,6 +32,24 @@ exports.createPerson   = asyncHandler( async (req,res,next)=>{
     })
 
 });
+
+// @desc Get a person by id
+//@route  POST /api/v1/persons/:id
+//@access  Public
+
+exports.getPerson  = asyncHandler(async (req,res,next)=>{
+   
+        const temp_id =  req.body.id
+
+        const pr =  await Person.findById(temp_id)
+        
+         res.status(200).json({
+                success:true,
+                data: pr
+         })
+
+});
+
 
 //@desc add a photo to the Person
 //@POST /api/v1/person/id
